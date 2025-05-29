@@ -1,0 +1,393 @@
+/* Общие стили и сброс */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Comfortaa', cursive; /* Милый, округлый шрифт */
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffebee; /* Очень нежный розовый */
+    overflow-x: hidden; /* Чтобы избежать горизонтальной прокрутки из-за анимаций */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Летающие сердечки на фоне */
+.heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Чтобы сердечки не мешали кликать по элементам */
+    z-index: -1; /* Помещаем под контент */
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 1.5em; /* Размер сердечка */
+    color: #ff8a80; /* Розовое сердечко */
+    animation: floatUp 10s linear infinite; /* Анимация полета */
+    opacity: 0; /* Изначально прозрачное */
+    transform: translateX(-50%); /* Центрирование сердечка */
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) translateX(-50%) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% {
+        transform: translateY(-10vh) translateX(-50%) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Header */
+header {
+    background-color: #ffcdd2; /* Нежный розовый */
+    color: #880e4f; /* Темно-розовый текст */
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive; /* Особый, рукописный шрифт */
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #d81b60; /* Ярко-розовый */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Для мобильных устройств */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #880e4f;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ef9a9a; /* Светлее при наведении */
+    transform: translateY(-3px);
+}
+
+/* Секции */
+section {
+    padding: 60px 0;
+    text-align: center;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f8bbd0; /* Нежная розовая рамка */
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8em;
+    color: #d81b60;
+    margin-bottom: 30px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f8bbd0, #f48fb1); /* Красивый розовый градиент */
+    color: #fff;
+    padding: 100px 20px;
+    height: 70vh; /* Почти во весь экран */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+}
+
+.hero-section h2 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section p {
+    font-size: 1.6em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Кнопки */
+button {
+    background-color: #e91e63; /* Ярко-розовый */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #c2185b; /* Темнее при наведении */
+    transform: translateY(-5px);
+}
+
+/* Анимация для кнопок: пульсация */
+.pulse-button {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(233, 30, 99, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233, 30, 99, 0); }
+}
+
+/* Кнопка с эффектом масштабирования при клике */
+.button-scale:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-out;
+}
+
+/* Кнопка с эффектом при наведении (для загадок) */
+.button-hover-effect:hover {
+    background-color: #f48fb1; /* Светлее розовый */
+    transform: scale(1.05); /* Немного увеличивается */
+}
+
+/* Секция "О сайте" */
+.about-section p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 15px;
+}
+
+/* Секция "Загадка дня" */
+.riddle-section #riddle-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4a148c; /* Фиолетовый */
+    margin-bottom: 20px;
+    min-height: 50px; /* Чтобы не скакало при загрузке */
+}
+
+.riddle-section #riddle-answer {
+    font-size: 1.3em;
+    color: #c2185b;
+    margin-bottom: 30px;
+}
+
+.riddle-section .hidden {
+    display: none;
+}
+
+.riddle-section .riddle-buttons button {
+    margin: 0 10px;
+}
+
+/* Мини-игра */
+.game-section {
+    padding-bottom: 30px; /* Немного меньше отступ снизу */
+}
+.game-area {
+    width: 80%;
+    max-width: 600px;
+    height: 250px; /* Высота области игры */
+    background-color: #fff8e1; /* Очень светлый желтый */
+    border: 3px dashed #ffab91; /* Прерывистая оранжевая рамка */
+    margin: 30px auto;
+    position: relative; /* Для правильного позиционирования сердечек */
+    overflow: hidden; /* Чтобы сердечки не вылетали за границы */
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.score-display {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #d81b60;
+    z-index: 10;
+}
+
+#heart-spawn-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.game-heart {
+    position: absolute;
+    font-size: 2.5em;
+    cursor: pointer;
+    color: #e91e63; /* Цвет сердечка в игре */
+    transition: transform 0.1s ease-out; /* Для небольшой анимации при клике */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.game-heart:active {
+    transform: scale(0.8);
+}
+
+/* Секция "Мои Слова для Тебя" */
+.words-section p {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #4a148c;
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hidden-message {
+    font-size: 0.8em;
+    color: #f48fb1; /* Очень бледный розовый, почти невидимый */
+    opacity: 0; /* Полностью невидимый по умолчанию */
+    transition: opacity 0.3s ease, font-size 0.3s ease, color 0.3s ease; /* Плавное проявление */
+    user-select: text; /* Позволяет выделять текст */
+    margin-top: 20px;
+}
+
+.hidden-message:hover {
+    opacity: 1; /* Становится видимым при наведении */
+    font-size: 1.1em; /* Увеличивается немного */
+    color: #880e4f; /* Становится ярче */
+}
+
+/* Footer */
+footer {
+    background-color: #ef9a9a; /* Светло-розовый */
+    color: #880e4f;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Анимации при загрузке и прокрутке --- */
+
+/* Элементы, которые будут анимироваться при появлении на экране */
+.animated-section,
+.fade-in-up,
+.delay-1, .delay-2, .delay-3 { /* Эти классы уже имеют задержки */
+    opacity: 0;
+    transform: translateY(20px); /* Начинают немного снизу */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Когда элемент становится видимым, ему добавляется класс .is-visible */
+.animated-section.is-visible,
+.fade-in-up.is-visible,
+.delay-1.is-visible, .delay-2.is-visible, .delay-3.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Анимации при загрузке страницы (для шапки и hero-секции) */
+.fade-in-down {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s ease-out forwards;
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1s ease-out forwards;
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInRight 1s ease-out forwards;
+}
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    .hero-section {
+        padding: 60px 15px;
+        height: auto;
+    }
+    .hero-section h2 {
+        font-size: 3em;
+    }
+    .hero-section p {
+        font-size: 1.2em;
+    }
+    section {
+        padding: 40px 15px;
+        margin: 20px auto;
+    }
+    h2 {
+        font-size: 2.2em;
+    }
+    .riddle-section #riddle-text {
+        font-size: 1.2em;
+    }
+    .riddle-section #riddle-answer {
+        font-size: 1em;
+    }
+    .riddle-section .riddle-buttons button {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+    .game-area {
+        width: 95%;
+        height: 200px;
+    }
+    button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}

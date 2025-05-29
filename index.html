@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт для Белочки</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/png/social/favorite/materialiconsround/48dp/2x/baseline_favorite_black_48dp.png" type="image/png">
+</head>
+<body>
+    <div class="heart-container"></div> <!-- Контейнер для летающих сердечек -->
+
+    <header>
+        <div class="container">
+            <h1 class="fade-in-down">Для Виолетты</h1>
+            <nav>
+                <ul class="fade-in-down delay-1">
+                    <li><a href="#intro">Привет</a></li>
+                    <li><a href="#about">О сайте</a></li>
+                    <li><a href="#riddle-of-day">Загадки</a></li>
+                    <li><a href="#mini-game">Мини-игра</a></li>
+                    <li><a href="#sweet-words">Слова для тебя</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="intro" class="hero-section animated-section">
+            <div class="container">
+                <h2 class="slide-in-right">Привет, Любимая</h2>
+                <p class="slide-in-left delay-1">
+                    Этот маленький сайт — для тебя. Я его делал с любовью.
+                    Надеюсь, он поднимет тебе настроение.
+                </p>
+                <button class="pulse-button delay-2" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+                    Заглянуть внутрь 🎁
+                </button>
+            </div>
+        </section>
+
+        <section id="about" class="about-section animated-section">
+            <div class="container">
+                <h2 class="fade-in-up">Немного о тебе</h2>
+                <p class="fade-in-up delay-1">
+                    Этот сайт — мой маленький подарок для тебя, Солнышко.
+                    Он создан, чтобы поднять настроение и напомнить, как сильно я ценю каждый момент рядом с тобой.
+                </p>
+                <p class="fade-in-up delay-2">
+                    Каждая деталь здесь — от летающих сердечек до секретного сообщения — сделана только для тебя.
+                    Надеюсь, тебе понравится.
+                </p>
+            </div>
+        </section>
+
+        <section id="riddle-of-day" class="riddle-section animated-section">
+            <div class="container">
+                <h2 class="fade-in-up">Загадка</h2>
+                <p id="riddle-text" class="fade-in-up delay-1">Загрузка загадки...</p>
+                <p id="riddle-answer" class="hidden fade-in-up delay-2">Ответ будет здесь.</p>
+                <div class="riddle-buttons fade-in-up delay-3">
+                    <button id="show-answer-btn" class="button-hover-effect">Показать ответ</button>
+                    <button id="next-riddle-btn" class="button-hover-effect">Следующая загадка</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="mini-game" class="game-section animated-section">
+            <div class="container">
+                <h2 class="fade-in-up">Мини-игра: Поймай ❤️</h2>
+                <p class="fade-in-up delay-1">Поймай как можно больше сердечек за 20 секунд</p>
+                <div class="game-area fade-in-up delay-2">
+                    <span class="score-display">Счёт: <span id="score">0</span></span>
+                    <div id="heart-spawn-area"></div>
+                </div>
+                <button id="start-game-btn" class="button-scale fade-in-up delay-3">Начать игру</button>
+            </div>
+        </section>
+
+        <section id="sweet-words" class="words-section animated-section">
+            <div class="container">
+                <h2 class="fade-in-up">Мои Слова для Тебя, Виолетта ❤️</h2>
+                <p class="fade-in-up delay-1">
+                    Виолетта, ты самое милое солнышко в моей жизни.
+                    Каждый день с тобой бывает по своему теплый. 
+                    Ты чудо моё и просто самая лучшая девочка на свете
+                </p>
+                <small class="fade-in-up delay-2">Где-то здесь есть маленькое секретное сообщение для тебя... Поищи, оно спрятано!</small>
+                <p class="hidden-message">если бы я мог завести отношение, добивался бы именно тебя, и никогда бы в жизни тебя не отпускал</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p> С любовью ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
